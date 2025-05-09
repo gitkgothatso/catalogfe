@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Book {
 
-    private Integer isbn;
+    private Long isbn;
     private String name;
     private LocalDate publishedDate;
     private BigDecimal price;

@@ -13,8 +13,14 @@
 <div class="container mt-4">
     <h2>Books Catalog</h2>
 
-    <!-- Add Button -->
-    <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#addModal">Add Book</button>
+    <c:choose>
+      <c:when test = "${not empty error}">
+        <div class="alert alert-danger">${error}</div>
+      </c:when>
+      <c:otherwise>
+        <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#addModal">Add Book</button>
+      </c:otherwise>
+    </c:choose>
 
     <!-- Table -->
     <table class="table table-bordered">
@@ -64,6 +70,10 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
+                 <div class="form-group">
+                    <label>ISBN:</label>
+                    <input type="number" name="isbn" class="form-control" required/>
+                </div>
                 <div class="form-group">
                     <label>Name:</label>
                     <input name="name" class="form-control" required/>
@@ -84,10 +94,7 @@
                     <label>Price:</label>
                     <input type="number" name="price" class="form-control" step="0.01" min="0" required/>
                 </div>
-               <!-- <div class="form-group">
-                    <label>ISBN:</label>
-                    <input type="number" name="isbn" class="form-control" required/>
-                </div> -->
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="submit">Save</button>
@@ -127,10 +134,7 @@
                     <label>Price:</label>
                     <input type="number" name="price" id="edit-price" class="form-control" step="0.01" min="0" required/>
                 </div>
-            <!--    <div class="form-group">
-                    <label>ISBN:</label>
-                    <input type="number" name="isbn" id="edit-isbn" class="form-control" required/>
-                </div> -->
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="submit">Update</button>
