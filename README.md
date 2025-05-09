@@ -11,3 +11,5 @@ In order to successfully manage the books, please make sure that before the appl
  1. `mvn clean package` this will produce a `.war`file in the target folder
  2. java -jar target/
 
+
+For testing of the application, after all services run successfully you can open your brower on http://localhost:8081/
